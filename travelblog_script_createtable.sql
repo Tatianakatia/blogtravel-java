@@ -18,20 +18,22 @@ CREATE TABLE user (
   PRIMARY KEY (user_id));
   
   -- Table structure for table "post"
+drop table post;
 
   CREATE TABLE post (
   post_id BIGINT NOT NULL AUTO_INCREMENT,
   user_id BIGINT NOT NULL,
  -- author_id BIGINT NOT NULL,
-  title VARCHAR(75) NOT NULL,
+  title VARCHAR(75)  NULL,
   metaTitle VARCHAR(100) NULL,
-  slug VARCHAR(100) NOT NULL,
+  slug VARCHAR(100)  NULL,
   summary TINYTEXT NULL,
-  published TINYINT NOT NULL DEFAULT 0,
+  published TINYINT  NULL DEFAULT 0,
   createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
   updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   publishedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
   content TEXT NULL DEFAULT NULL,
+  post_img VARCHAR(30)  NULL,
   PRIMARY KEY (post_id),
     FOREIGN KEY (user_id) REFERENCES user (user_id));
     
